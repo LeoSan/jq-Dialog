@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- jq-Dialog -->
+<link href="css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
+<script src="js/bootstrap-dialog.min.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+
+
+
+		$( "#btnLeonard" ).on( "click", function() {
+
+					modalMensaje('leo1', 'Memnsaje eo ', 'leo2', 'leo3');
+  				
+		});
+
+});
+
+
+function modalMensaje(titulo1, mensaje, label1, titulo2){
+
+	 BootstrapDialog.show({
+            title: titulo1,
+            message: mensaje,
+            buttons: [{
+                label: label1,
+                action: function(dialog) {
+                    dialog.setTitle('Title 1');
+                }
+            }, {
+                label: titulo2,
+                action: function(dialog) {
+                    dialog.setTitle('Title 2');
+                }
+            }, {
+		        id: 'btn-ok',   
+		        icon: 'glyphicon glyphicon-check',       
+		        label: 'OK',
+		        cssClass: 'btn-primary',
+		        data: {
+		            js: 'btn-confirm',
+		            'user-id': '3'
+		        },
+		        autospin: false,
+		        action: function(dialogRef){    
+		            dialogRef.close();
+		        }
+		    }]
+        });
+
+
+}
+
+
+
+	</script>
+</head>
+<body>
+
+<button id="btnLeonard" class="btn btn-primary">Run the code</button>
+
+</body>
+</html>
